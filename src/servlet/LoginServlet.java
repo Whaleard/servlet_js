@@ -22,6 +22,7 @@ public class LoginServlet extends BaseServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
         PrintWriter writer = null;
+        BufferedReader reader = null;
         try {
             System.out.println("Login...");
 
@@ -30,7 +31,7 @@ public class LoginServlet extends BaseServlet {
             // String username = req.getParameter("userName");
             // String password = req.getParameter("password");
             // 对于application/json，需要手动读取请求体。
-            BufferedReader reader = req.getReader();
+            reader = req.getReader();
             String url = "/error.jsp";
             StringBuffer sb = new StringBuffer();
             String line;
@@ -46,6 +47,15 @@ public class LoginServlet extends BaseServlet {
         } catch (IOException e) {
             throw new RuntimeException(e);
         } finally {
+            // 关闭输入流
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            // 关闭输出流
             if (writer != null) {
                 writer.flush();
                 writer.close();
