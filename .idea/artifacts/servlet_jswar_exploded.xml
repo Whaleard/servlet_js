@@ -31,6 +31,8 @@
           <element id="file-copy" path="$PROJECT_DIR$/../../Java/apache-tomcat-7.0.65/lib/annotations-api.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/../../Java/apache-tomcat-7.0.65/lib/catalina-tribes.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/../../Java/apache-tomcat-7.0.65/lib/tomcat7-websocket.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../Java/jar/jstl-1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../Java/jar/standard-1.1.2.jar" />
         </element>
       </element>
     </root>

@@ -12,7 +12,7 @@ public class HelloServlet extends BaseServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        super.doGet(req, resp);
+        this.doPost(req, resp);
     }
 
     @Override
@@ -23,7 +23,7 @@ public class HelloServlet extends BaseServlet {
             req.setAttribute("tittle", "hello world");
             // getParameter()一般取url后面拼接的参数值或者form表单传递的参数值
             // resp.sendRedirect("http://localhost:8160/learn//hello.jsp");
-            req.getRequestDispatcher("/hello.jsp?userName=init").forward(req, resp);
+            req.getRequestDispatcher("/hello.jsp?userName=init&password=qwe123").forward(req, resp);
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (ServletException e) {
