@@ -27,7 +27,7 @@ public class HttpServletTest implements Servlet {
      */
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
-        // ServletConfig类是Servlet程序的配置信息类
+        // ServletConfig接口是Servlet程序的配置信息
         // ServletConfig类的三大作用
         // 1、可以获取Servlet程序的别名，也就是web.xml中的servlet-name标签值
         System.out.println("HttpServletTest程序的别名是：" + servletConfig.getServletName());
