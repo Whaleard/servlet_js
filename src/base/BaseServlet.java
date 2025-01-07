@@ -12,6 +12,22 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
+ * Servlet类的继承体系
+ *
+ * Interface Servlet
+ *      Servlet接口，只负责定义Servlet程序的访问规范
+ *
+ * Class GenericServlet
+ *      GenericServlet类实现了Servlet接口，做了很多实现
+ *      持有一个ServletConfig类的引用，并对ServletConfig的使用做了一些实现方法
+ *
+ * Class HttpServlet
+ *      HttpServlet抽象类实现了service()方法，并实现了请求的分发处理
+ *      String method = req.getMethod();
+ *
+ * 自己的业务类
+ *      继承HttpServlet并重写doGet()方法和doPost()方法
+ *
  * @author Mr MC
  */
 public class BaseServlet<T> extends HttpServlet {
