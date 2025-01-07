@@ -18,7 +18,7 @@
         <servlet-name>GetParameterFromRequestBody</servlet-name>
         <!-- url-pattern标签配置访问地址 -->
         <!--
-            / 在服务器解析的时候，表示地址为：http://ip:port/工程路径   例如该项目则表示 http://localhost:8160/learn/
+            / 在服务器解析的时候，表示地址为：http://ip:port/工程路径   例如该项目则表示 http://localhost:8160/servlet_js/
             /xxx 则表示 http://ip:port/工程路径/xxx，也就是访问该Servlet程序的地址
         -->
         <url-pattern>/getParameterFromRequestBody</url-pattern>
@@ -40,5 +40,25 @@
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HttpServletTest</servlet-name>
+        <servlet-class>test.HttpServletTest</servlet-class>
+        <!-- init-param是初始化参数 -->
+        <init-param>
+            <!-- 参数名 -->
+            <param-name>username</param-name>
+            <!-- 参数值 -->
+            <param-value>admin</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>123456</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HttpServletTest</servlet-name>
+        <url-pattern>/httpServletTest</url-pattern>
     </servlet-mapping>
 </web-app>
