@@ -84,7 +84,8 @@ public class HttpServletTest implements Servlet {
     public void doGet() {
         /*
             ServletContext接口表示Servlet上下文对象，一个web工程只有一个ServletContext对象实例。
-            ServletContext对象是一个域对象，是可以像Map一样存取数据的对象，这里的域指的是存取数据的操作范围。
+            ServletContext对象是一个域对象，是可以像Map一样存取数据的对象，这里的域指的是存取数据的操作范围，范围为整个工程。
+            ServletContext在web工程部署启动的时候创建，在web工程停止的时候销毁。
          */
         ServletContext servletContext = this.servletConfig.getServletContext();
         // ServletContext类的四个作用
