@@ -71,4 +71,8 @@
         <servlet-name>HttpServletTest</servlet-name>
         <url-pattern>/httpServletTest</url-pattern>
     </servlet-mapping>
+    
+    <listener>
+        <listener-class>listener.HelloServletContextListener</listener-class>
+    </listener>
 </web-app>
