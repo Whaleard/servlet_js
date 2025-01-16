@@ -16,12 +16,12 @@
       <ul>
         <li><a href="cookieServlet?action=createCookie" target="target">Cookie的创建</a></li>
         <li><a href="cookieServlet?action=getCookie" target="target">Cookie的获取</a></li>
-        <li><a href="" target="target">Cookie值的修改</a></li>
-        <li>Cookie的存货周期</li>
+        <li><a href="cookieServlet?action=updateCookie" target="target">Cookie值的修改</a></li>
+        <li>Cookie的存活周期</li>
         <li>
           <ul>
-            <li><a href="" target="target">Cookie的默认存活时间（会话）</a></li>
-            <li><a href="" target="target">Cookie立即删除</a></li>
+            <li><a href="cookieServlet?action=defaultLife" target="target">Cookie的默认存活时间（会话）</a></li>
+            <li><a href="cookieServlet?action=deleteCookie" target="target">Cookie立即删除</a></li>
             <li><a href="" target="target">Cookie存活3600秒（1小时）</a></li>
           </ul>
         </li>
