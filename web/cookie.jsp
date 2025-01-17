@@ -25,7 +25,7 @@
             <li><a href="" target="target">Cookie存活3600秒（1小时）</a></li>
           </ul>
         </li>
-        <li><a href="" target="target">Cookie的路径设置</a></li>
+        <li><a href="cookieServlet?action=cookiePath" target="target">Cookie的路径设置</a></li>
         <li><a href="" target="target">Cookie的用户免登录练习</a></li>
       </ul>
     </div>

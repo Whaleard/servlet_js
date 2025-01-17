@@ -30,7 +30,8 @@
 <form>
   <%-- ${param.xxx}是从相当于request.getParameter(xxx) --%>
   <label for="userName">用户名：</label>
-  <input id="userName" name="userName" /><br/>
+  <%-- EL表达式的内置对象${cookie}，获取cookie对象，每个cookie是一个键值对，${cookie}相当于获取了所有的键值对 --%>
+  <input id="userName" name="userName" value="${cookie.username.value}" /><br/>
   <label for="password">密码：</label>
   <input id="password" name="password" /><br/>
   <input type="submit" value="提交" onclick="login()" />

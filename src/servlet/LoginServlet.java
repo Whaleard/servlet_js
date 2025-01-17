@@ -7,6 +7,7 @@ import domain.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletInputStream;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
@@ -40,8 +41,15 @@ public class LoginServlet extends BaseServlet {
             }
             User user = JSON.parseObject(sb.toString(), User.class);
             // 此处用户名密码先写死
-            if ("init".equals(user.getUserName()) && "qwe123".equals(user.getPassWord())) {
+            if ("init".equals(user.getUserName()) && "123456".equals(user.getPassWord())) {
+                // 登录成功
+                Cookie cookie = new Cookie("username", user.getUserName());
+                cookie.setMaxAge(60* 60 * 24 * 7);
+                resp.addCookie(cookie);
                 url = "/success.jsp";
+            } else {
+                // 登录失败
+
             }
             writer.print(url);
         } catch (IOException e) {
