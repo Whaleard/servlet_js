@@ -69,8 +69,10 @@ public class BaseServlet<T> extends HttpServlet {
     protected void doHandler(String jsonParameter) {
         System.out.println(jsonParameter);
         Message message = JSON.parseObject(jsonParameter, Message.class);
-        System.out.println(message.getHeader().toString());
-        System.out.println(message.getUser().toString());
+        if (message != null) {
+            System.out.println(message.getHeader().toString());
+            System.out.println(message.getUser().toString());
+        }
     }
 
     protected void invoke(HttpServletRequest req, HttpServletResponse resp) {
