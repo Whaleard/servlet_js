@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 /**
  * Servlet类的继承体系
@@ -50,6 +52,7 @@ public class BaseServlet<T> extends HttpServlet {
                 requestParameter.append(line);
             }
             this.doHandler(requestParameter.toString());
+            this.invoke(req, resp);
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -68,5 +71,24 @@ public class BaseServlet<T> extends HttpServlet {
         Message message = JSON.parseObject(jsonParameter, Message.class);
         System.out.println(message.getHeader().toString());
         System.out.println(message.getUser().toString());
+    }
+
+    protected void invoke(HttpServletRequest req, HttpServletResponse resp) {
+        resp.setCharacterEncoding("UTF-8");
+        // 解决响应中文乱码问题
+        resp.setContentType("text/html;charset=UTF-8");
+
+        String action = req.getParameter("action");
+
+        try {
+            Method method = this.getClass().getDeclaredMethod(action, HttpServletRequest.class, HttpServletResponse.class);
+            method.invoke(this, req, resp);
+        } catch (NoSuchMethodException e) {
+            throw new RuntimeException(e);
+        } catch (InvocationTargetException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
