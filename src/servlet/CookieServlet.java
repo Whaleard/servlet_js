@@ -14,7 +14,9 @@ import java.lang.reflect.Method;
 /**
  * Cookie是服务器通知客户端保存键值对的一种技术。
  * 客户端有了Cookie后，每次请求都发送给服务器。
- * 每个Cookie的大小不能超过4kb
+ * 每个Cookie的大小不能超过4kb。
+ *
+ * @author Mr MC
  */
 public class CookieServlet extends BaseServlet {
 
