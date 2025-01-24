@@ -27,7 +27,7 @@ public class CookieServlet extends BaseServlet {
      * @throws ServletException
      * @throws IOException
      */
-    protected void createCookie(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void createCookie(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 1、创建Cookie对象
         Cookie cookie = new Cookie("key1", "value1");
         // 2、通知客户端保存Cookie
@@ -47,7 +47,7 @@ public class CookieServlet extends BaseServlet {
      * @throws ServletException
      * @throws IOException
      */
-    protected void getCookie(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void getCookie(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 1、客户端通过请求头Cookie把Cookie信息发送给服务器
         // 2、服务器获取客户端发送过来的Cookie
         Cookie[] cookies = req.getCookies();
@@ -65,7 +65,7 @@ public class CookieServlet extends BaseServlet {
      * @throws ServletException
      * @throws IOException
      */
-    protected void updateCookie(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void updateCookie(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 方案一
         // 1、先创建一个要修改的同名的Cookie对象
         // 2、在构造器中同时赋予新的Cookie值
@@ -91,7 +91,7 @@ public class CookieServlet extends BaseServlet {
      * @throws ServletException
      * @throws IOException
      */
-    protected void defaultLife(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void defaultLife(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Cookie cookie = new Cookie("defaultLife", "defaultLife");
         // 设置Cookie存活时间
         /*
@@ -111,7 +111,7 @@ public class CookieServlet extends BaseServlet {
      * @throws ServletException
      * @throws IOException
      */
-    protected void deleteCookie(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void deleteCookie(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 1、先找到要删除的Cookie对象
         Cookie cookie = CookieUtils.findCookie("key1", req.getCookies());
         if (cookie != null) {
@@ -131,7 +131,7 @@ public class CookieServlet extends BaseServlet {
      * @throws ServletException
      * @throws IOException
      */
-    protected void cookiePath(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void cookiePath(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Cookie cookie = new Cookie("path1", "path1");
         // 获取工程路径
         cookie.setPath(req.getContextPath() + "/abc");

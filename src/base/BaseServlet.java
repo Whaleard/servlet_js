@@ -75,6 +75,15 @@ public class BaseServlet<T> extends HttpServlet {
         }
     }
 
+    /**
+     * public：公共类，可以被任何其他类访问。
+     * protected：受保护的类，可以被同一个包内的类和所有子类访问。
+     * default：默认访问修饰符，只能在同一个包内访问。
+     * private：私有类，只能在定义它的类内部访问。
+     *
+     * @param req
+     * @param resp
+     */
     protected void invoke(HttpServletRequest req, HttpServletResponse resp) {
         resp.setCharacterEncoding("UTF-8");
         // 解决响应中文乱码问题
