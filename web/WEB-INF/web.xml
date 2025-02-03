@@ -93,4 +93,27 @@
     <listener>
         <listener-class>listener.HelloServletContextListener</listener-class>
     </listener>
+
+    <filter>
+        <filter-name>FilterServlet</filter-name>
+        <filter-class>servlet.FilterServlet</filter-class>
+
+        <init-param>
+            <param-name>zookeeper</param-name>
+            <param-value>127.0.0.1:2181</param-value>
+        </init-param>
+        <init-param>
+            <param-name>database</param-name>
+            <param-value>oracle</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>FilterServlet</filter-name>
+        <!-- url-pattern配置拦截路径 -->
+        <!--
+            / 表示请求地址为：http://ip:port/工程路径 映射到web目录
+            /filter/* 表示请求地址为：http://ip:port/工程路径/filter/*
+        -->
+        <url-pattern>/filter/*</url-pattern>
+    </filter-mapping>
 </web-app>
