@@ -22,7 +22,7 @@
           <ul>
             <li><a href="sessionServlet?action=defaultLifeTime" target="target">Session的默认超时及配置</a></li>
             <li><a href="sessionServlet?action=setLifeTime" target="target">Session3秒超时销毁</a></li>
-            <li><a href="" target="target">Session马上销毁</a></li>
+            <li><a href="sessionServlet?action=invalidateNow" target="target">Session马上销毁</a></li>
           </ul>
         </li>
         <li><a href="" target="target">浏览器和Session绑定的原理</a></li>

@@ -94,4 +94,13 @@ public class SessionServlet extends BaseServlet {
 
         resp.getWriter().write("当前Session已经设置为" + session.getMaxInactiveInterval() + "秒超时");
     }
+
+    public void invalidateNow(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // 先获取Session对象
+        HttpSession session = req.getSession();
+        // 让Session回话马上超时
+        session.invalidate();
+
+        resp.getWriter().write("Session已经设置为超时（无效）");
+    }
 }
